@@ -1,0 +1,737 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Thaagam Foundation</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="apple-touch-icon" href="assets/img/apple-icon.png">
+    <link rel="shortcut icon" type="image/png" href="https://thaagamorg-eb-s3.s3.amazonaws.com/static/main/assets/images/icon.png">
+
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/templatemo.css">
+    <link rel="stylesheet" href="assets/css/custom.css">
+
+    <!-- Load fonts style after rendering the layout styles -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;200;300;400;500;700;900&display=swap">
+    <link rel="stylesheet" href="assets/css/fontawesome.min.css">
+<!--
+    
+TemplateMo 559 Zay Shop
+
+https://templatemo.com/tm-559-zay-shop
+
+-->
+<style>
+    #video-background{
+        width: 100%;
+    height: 75vh;
+    object-fit: cover;
+    vertical-align: middle;
+    }
+.navbar .container{
+    margin-top: 10px;
+}
+ 
+.container{
+    margin-top: 30px;
+}
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 40px;
+  width: 90%;
+  max-width: 1200px;
+}
+
+.card-container {
+  text-align: center;
+}
+
+.card {
+  position: relative;
+  
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+
+}
+
+.card img {
+  width: 100%;
+  height: 340px;
+  display: block;
+  border-radius: 10px;
+}
+
+.card-button {
+    opacity: 0;
+  position: absolute;
+  bottom: -40px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 2px 5px;
+  width: 150px;
+  background-color: #009dff;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 50px;
+  transition: bottom 0.3s ease-in-out;
+  border: 3px solid white;
+}
+
+.card:hover .card-button {
+    opacity: 1;
+  bottom: -20px;
+}
+
+.card-text {
+  margin-top: 10px;
+  font-size: 16px;
+  color: #333;
+}
+.sub-description{
+    display: flex;
+    margin-top: 20px;
+}
+.left{
+    float: left;
+}
+.right{
+    float: right;
+}
+
+.wrapper {
+  width: 100%;
+  margin-top: 20px;
+}
+
+.image-container {
+  display: flex;
+  flex-wrap: wrap; /* Makes it responsive for smaller screens */
+  width: 100%;
+}
+
+.image-wrapper {
+  position: relative;
+  width: 50%; /* Each image takes half the width on larger screens */
+}
+
+.image-wrapper img {
+  width: 100%;
+  height: auto;
+  opacity: 0.6;
+}
+
+.overlay-left{
+  position: absolute;
+  top: 50%;
+  right: -40px;
+  background-color: white;
+  padding: 50px;
+  border-radius:50%;
+  border: 1px solid black;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+.overlay-right{
+  position: absolute;
+  top: 50%;
+  left: 140px;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.title {
+  font-size: 24px;
+  color: black;
+  margin-bottom: 10px;
+}
+.title-year{
+    font-size: 30px;
+  color: black;
+  margin-bottom: 10px;
+}
+.title-heath{
+    font-size: 50px;
+  color: black;
+  margin-bottom: 10px;
+}
+
+.action-button {
+  padding: 10px 20px;
+  background-color: #007BFF; /* Blue button */
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.action-button-white{
+    padding: 5px 10px;
+    border: 1px solid black;
+    border-radius: 5px;
+}
+.action-button-white:hover{
+    background-color: black;
+    color: white;
+}
+.action-button:hover {
+  background-color: #0056b3; /* Darker blue on hover */
+}
+
+.section5 {
+  width: 96%;
+  margin-top: 20px;
+  padding: 2%;
+}
+
+.section5-sub {
+  display: flex;
+  flex-wrap: wrap; /* Makes it responsive for smaller screens */
+  width: 100%;
+  align-items: center;
+}
+
+.section5-left {
+  width: 40%; /* Default width for larger screens */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.section5-right {
+  width: 60%; /* Default width for larger screens */
+}
+
+.section5-left img {
+  border-radius: 50% 50% 0 0;
+  max-height: 300px;
+  width: auto;
+  padding-left: 50px;
+}
+
+.section5-right h1 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+.section5-right p {
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  
+    .image-wrapper {
+    width: 100%; /* Stacks images on smaller screens */
+  }
+  .section5-sub {
+    flex-direction: column; /* Stack the image and text vertically */
+    align-items: center;
+    text-align: center;
+  }
+
+  .section5-left,
+  .section5-right {
+    width: 100%; /* Full width for smaller screens */
+  }
+
+  .section5-left img {
+    padding-left: 0; /* Remove left padding for smaller screens */
+    max-height: 200px; /* Adjust image size */
+  }
+
+  .section5-right h1 {
+    font-size: 1.5rem; /* Adjust font size */
+  }
+
+  .section5-right p {
+    font-size: 0.9rem; /* Adjust paragraph size */
+    padding: 0 10px; /* Add padding for better readability */
+  }
+
+
+
+
+}
+
+
+
+/* Responsive Design */
+@media (max-width: 992px) {
+  .card-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .card-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 576px) {
+  .card-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+
+
+
+
+
+
+/* Container Styling */
+.child_container_1 {
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  background-color: #f8f9fa;
+}
+
+.instagram-id {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+  text-align: center;
+  background-color: white;
+  padding: 10px 20px;
+  border-radius: 10px;
+  width: 245px;
+}
+.instagram-id img{
+    width: 15%;
+}
+.instagram-id span {
+  margin: 0;
+  font-size: 1.2rem;
+  color: rgb(7, 0, 0);
+  font-weight: bold;
+}
+
+/* Image Grid Styling */
+.image-grid {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  gap: 0; /* No gaps between images */
+}
+
+.insta-post {
+    flex: 1 1 16.666%; /* 6 images per row for large devices */
+  height: 200px;
+}
+
+.insta-post img {
+  width: 100%;
+  height: 100%;
+  opacity: 1;
+  object-fit: cover; /* Ensures images fill the allotted space */
+  transition: transform 0.3s ease-in-out;
+}
+
+.insta-post:hover img {
+  transform: scale(1.05); /* Zoom effect */
+}
+
+/* Responsive Adjustments */
+@media (max-width: 992px) {
+  .insta-post {
+    flex: 1 1 50%; /* 2 images per row for tablets */
+    height: 200px;
+  }
+}
+
+@media (max-width: 576px) {
+  .insta-post {
+    flex: 1 1 50%; /* Still 2 images per row for smaller devices */
+    height: 150px; /* Adjust height for smaller screens */
+  }
+}
+
+.banner-main{
+    position: relative;
+    height: 90vh;
+}
+.banner-content{
+    position: absolute;
+    bottom: 0%;
+    right: 20px;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: black;
+    color: white;
+    width: 550px;
+}
+@media (max-width:998px) {
+    .banner-main{
+   
+   height: 120vh;
+}
+.banner-content{
+   position: relative;
+   bottom: 0;
+   right: 0;
+   border-radius: 0;
+   width: 100%;
+  
+}
+}
+
+
+
+
+</style>
+</head>
+
+<body>
+
+
+
+    <!-- Header -->
+    <nav class="navbar navbar-expand-lg navbar-light shadow">
+        <div class="container d-flex justify-content-between align-items-center">
+
+            <a class="navbar-brand text-success logo h1 align-self-center" href="index.html">
+                <img src="assets/img/blk_trans.png" alt="Logo" class="logo" height="50px" width="150px">
+
+            </a>
+
+            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#templatemo_main_nav" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="align-self-center collapse navbar-collapse flex-fill  d-lg-flex justify-content-lg-between" id="templatemo_main_nav">
+                <div class="flex-fill">
+                    <ul class="nav navbar-nav d-flex justify-content-between mx-lg-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="about.html">About Us</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="shop.html">Causes</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="contact.html">Blog</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="contact.html">Gallery</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="contact.html">Contact</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="navbar align-self-center d-flex">
+                    <div class="d-lg-none flex-sm-fill mt-3 mb-4 col-7 col-sm-auto pr-3">
+                        <div class="input-group">
+                            <input type="text" class="form-control" id="inputMobileSearch" placeholder="Search ...">
+                            <div class="input-group-text">
+                                <i class="fa fa-fw fa-search"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <a class="nav-link" href="contact.html">Track your Donation</a>
+                    <a class="nav-icon d-none d-lg-inline" href="#" data-bs-toggle="modal" data-bs-target="#templatemo_search">
+                        <i class="fa fa-fw fa-search text-dark mr-2"></i>
+                    </a>
+                  
+                </div>
+            </div>
+
+        </div>
+    </nav>
+    <!-- Close Header -->
+
+    <!-- Modal -->
+    <div class="modal fade bg-white" id="templatemo_search" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="w-100 pt-1 mb-5 text-right">
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <form action="" method="get" class="modal-content modal-body border-0 p-0">
+                <div class="input-group mb-2">
+                    <input type="text" class="form-control" id="inputModalSearch" name="q" placeholder="Search ...">
+                    <button type="submit" class="input-group-text bg-success text-light">
+                        <i class="fa fa-fw fa-search text-white"></i>
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+
+<div class="banner-main">
+    <video autoplay="" loop="" muted="" id="video-background">
+        <source src="https://thaagamorg-eb-s3.s3.amazonaws.com/static/website/images/background/thaagam.mp4" type="video/mp4">
+      </video>
+      <div class="banner-content">
+        <h1>why Thaagam ?</h1>
+        <span>Thaagam Foundation operates with 100% transparency, ensuring that every donation directly supports those in need. Our mission is to alleviate hunger and uplift communities through food, education, and healthcare, focusing on long-term solutions that create lasting change. We provide regular updates, allowing donors to see the tangible impact of their contributions. Together, we can transform lives and build a brighter future.</span>
+      </div>
+</div>
+    <!-- Start Banner Hero -->
+    <!-- End Banner Hero -->
+
+
+    <!-- Start Categories of The Month -->
+    <div class="container">
+        <h1>Our Causes</h1>
+        <div class="card-grid">
+            <div class="card-container">
+              <div class="card">
+                <img src="https://thaagamorg-eb-s3.s3.amazonaws.com/media/deps/causes/card/Artboard_15900x-8.webp" alt="Card Image" />
+                <button class="card-button"><h6>DONATE NOW</h6></button>
+              </div>
+              <div class="sub-description">
+                    <h6 class="left">Donate a Slipper
+                        </h6>
+                    <h6 class="right">₹150/ child</h6>
+              </div>
+              
+            </div>
+            <div class="card-container">
+              <div class="card">
+                <img src="https://thaagamorg-eb-s3.s3.amazonaws.com/media/deps/causes/card/BLANKET.webp" alt="Card Image" />
+                <button class="card-button"><h6>DONATE NOW</h6></button>
+              </div>
+              <div class="sub-description">
+                <h6 class="left">Donate a Slipper
+                    </h6>
+                <h6 class="right">₹150/ child</h6>
+          </div>
+            </div>
+            <div class="card-container">
+              <div class="card">
+                <img src="https://thaagamorg-eb-s3.s3.amazonaws.com/media/deps/causes/card/Artboard_55900x-8.webp" alt="Card Image" />
+                <button class="card-button"><h6>DONATE NOW</h6></button>
+              </div>
+              <div class="sub-description">
+                <h6 class="left">Donate a Slipper
+                    </h6>
+                <h6 class="right">₹150/ child</h6>
+          </div>
+            </div>
+            <div class="card-container">
+              <div class="card">
+                <img src="https://thaagamorg-eb-s3.s3.amazonaws.com/media/deps/causes/card/DOg.webp" alt="Card Image" />
+                <button class="card-button"><h6>DONATE NOW</h6></button>
+              </div>
+              <div class="sub-description">
+                <h6 class="left">Donate a Slipper
+                    </h6>
+                <h6 class="right">₹150/ child</h6>
+          </div>
+            </div>
+            <div class="card-container">
+              <div class="card">
+                <img src="https://thaagamorg-eb-s3.s3.amazonaws.com/media/deps/causes/card/GROCERY.webp" alt="Card Image" />
+                <button class="card-button"><h6>DONATE NOW</h6></button>
+              </div>
+              <div class="sub-description">
+                <h6 class="left">Donate a Slipper
+                    </h6>
+                <h6 class="right">₹150/ child</h6>
+          </div>
+            </div>
+            <div class="card-container">
+              <div class="card">
+                <img src="https://thaagamorg-eb-s3.s3.amazonaws.com/media/deps/causes/card/card_image.jpeg" alt="Card Image" />
+                <button class="card-button"><h6>DONATE NOW</h6></button>
+              </div>
+              <div class="sub-description">
+                <h6 class="left">Donate a Slipper
+                    </h6>
+                <h6 class="right">₹150/ child</h6>
+          </div>
+            </div>
+            <div class="card-container">
+              <div class="card">
+                <img src="https://thaagamorg-eb-s3.s3.amazonaws.com/media/deps/causes/card/child_gift.jpg" alt="Card Image" />
+                <button class="card-button"><h6>DONATE NOW</h6></button>
+              </div>
+              <div class="sub-description">
+                <h6 class="left">Donate a Slipper
+                    </h6>
+                <h6 class="right">₹150/ child</h6>
+          </div>
+            </div>
+            <div class="card-container">
+              <div class="card">
+                <img src="https://thaagamorg-eb-s3.s3.amazonaws.com/media/deps/causes/card/CHILDCARE.webp" alt="Card Image" />
+                <button class="card-button"><h6>DONATE NOW</h6></button>
+              </div>
+              <div class="sub-description">
+                <h6 class="left">Donate a Slipper
+                    </h6>
+                <h6 class="right">₹150/ child</h6>
+          </div>
+            </div>
+          </div>          
+        </div>
+    <!-- End Categories of The Month -->
+    <div class="wrapper">
+        <div class="image-container">
+          <div class="image-wrapper">
+            <img src="https://thaagamorg-eb-s3.s3.amazonaws.com/static/website/images/education-banner.jpg" alt="Beach at sunset">
+            <div class="overlay-left">
+              <h2 class="title">Education</h2>
+              <h2 class="title-year">2024</h2>
+              <span class="action-button-white">EXPLORE NOW</span>
+            </div>
+          </div>
+          <div class="image-wrapper">
+            <img src="https://thaagamorg-eb-s3.s3.amazonaws.com/static/website/images/healthcare-banner.jpg" alt="Mountain landscape">
+            <div class="overlay-right">
+              <h2 class="title-heath">Healthcare</h2>
+              <button class="action-button">EXPLORE NOW</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="section5">
+        <div class="section5-sub">
+
+            <div class="section5-left">
+                <img src="https://thaagamorg-eb-s3.s3.amazonaws.com/static/website/images/volunteer.png" alt="">
+            </div>
+            <div class="section5-right">
+               <h1>Become a Volunteer</h1> 
+                <p>Welcome to THAAGAM FOUNDATION! We invite you to engage with us and support our mission to make a positive impact in our community. Your involvement helps us provide nutritious meals to the homeless, distribute essential items like eggs and milk to families in need, support children's education, aid young hospital patients, donate blankets during cold weather, and organize tree planting events for a greener future. Together, we can create a brighter future for everyone. Get involved today and make a difference!
+                </p>
+                <span class="action-button">Become a Volunteer</span>
+            </div>
+        </div>
+       </div>
+       <div class="child_container_1 content-inner py-0 image-wrapper">
+        <div class="instagram-id">
+            <img src="https://thaagamorg-eb-s3.s3.amazonaws.com/static/website/images/insta-follow.png"  alt="Insta">
+          <span>Follow @Thaagam</span>
+        </div>
+        <div class="container-fluid px-0">
+          <div class="row gx-0">
+            <div class="image-grid">
+              <div class="insta-post">
+                <a href="#">
+                  <img src="https://thaagamorg-eb-s3.s3.amazonaws.com/static/website/images/blog.png" alt="blog">
+                </a>
+              </div>
+              <div class="insta-post">
+                <a href="#">
+                  <img src="https://thaagamorg-eb-s3.s3.amazonaws.com/static/website/images/cake_cut.png" alt="cake_cut">
+                </a>
+              </div>
+              <div class="insta-post">
+                <a href="#">
+                  <img src="https://thaagamorg-eb-s3.s3.amazonaws.com/static/website/images/recent-posts/Homeless/CHILD_3.webp" alt="child">
+                </a>
+              </div>
+              <div class="insta-post">
+                <a href="#">
+                  <img src="https://thaagamorg-eb-s3.s3.amazonaws.com/static/website/images/recent-posts/Homeless/CHILD_2.webp" alt="child">
+                </a>
+              </div>
+              <div class="insta-post">
+                <a href="#">
+                  <img src="https://thaagamorg-eb-s3.s3.amazonaws.com/static/website/images/recent-posts/Plant_Tree/TREE3.webp" alt="tree">
+                </a>
+              </div>
+              <div class="insta-post">
+                <a href="#">
+                  <img src="https://thaagamorg-eb-s3.s3.amazonaws.com/static/website/images/recent-posts/Stray%20Dog/DOG5.webp" alt="Dog">
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      
+      
+      
+
+
+    <!-- Start Footer -->
+    <footer class="bg-dark" id="tempaltemo_footer">
+        <div class="container">
+            <div class="row">
+
+                <div class="col-md-4 pt-5">
+                    <img src="assets/img/blk_trans.png" alt="Logo" class="logo" height="50px" width="150px">
+                    <ul class="list-unstyled text-black footer-link-list">
+                        <li>
+                            <i class="fas fa-map-marker-alt "></i>
+                            Address : No.6, Dhanammal street, Spurtank road, chetpet, Chennai 600-031
+                        </li>
+                        <li>
+                            <i class="fa fa-phone"></i>
+                            <a class="text-decoration-none" href="tel:010-020-0340">E-mail : office@thaagam.email</a>
+                        </li>
+                        <li>
+                            <i class="fa fa-envelope "></i>
+                            <a class="text-decoration-none" href="mailto:info@company.com">Phone : +91 8069169691</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="col-md-4 pt-5">
+                    <h2 class="h2 text-light border-bottom pb-3 border-light">Our Support</h2>
+                    <ul class="list-unstyled text-light footer-link-list">
+                        <li><a class="text-decoration-none" href="#">Privacy Policy</a></li>
+                        <li><a class="text-decoration-none" href="#">Refund Policy</a></li>
+                        <li><a class="text-decoration-none" href="#">Careers</a></li>
+                        <li><a class="text-decoration-none" href="#">Term's & Conditions</a></li>
+                        
+                    </ul>
+                </div>
+
+                <div class="col-md-4 pt-5">
+                    <h2 class="h2 text-light border-bottom pb-3 border-light">Useful Links</h2>
+                    <ul class="list-unstyled text-light footer-link-list">
+                        <li><a class="text-decoration-none" href="#">Report Bugs</a></li>
+                        <li><a class="text-decoration-none" href="#">Contact Us</a></li>
+
+                    </ul>
+                </div>
+
+            </div>
+
+          
+        </div>
+
+        <div class="w-100 bg-black py-3">
+            <div class="container">
+                <div class="row pt-2">
+                    <div class="col-12">
+                        <p class="text-left text-light">
+                            <b>
+                                © 2024   <span style="color: #007BFF;">Thaagam Foundation</span>All Rights Reserved
+                            </b>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </footer>
+    <!-- End Footer -->
+
+    <!-- Start Script -->
+    <script src="assets/js/jquery-1.11.0.min.js"></script>
+    <script src="assets/js/jquery-migrate-1.2.1.min.js"></script>
+    <script src="assets/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/templatemo.js"></script>
+    <script src="assets/js/custom.js"></script>
+    <!-- End Script -->
+</body>
+
+</html>
